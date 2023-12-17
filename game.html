@@ -511,10 +511,10 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 
 			</div>
 
-			<img src="assets/img/explosion.gif" style="width:100vw;height:95vw;display:none;position:fixed;left:0;top:0;z-index:500;" id="explosion">
+			<img src="assets/img/eclair.png" style="width:100vw;height:95vw;display:none;position:fixed;left:0;top:0;z-index:500;" id="explosion">
 			
 			<div style="position:fixed;top:110vw;left:5vw;width:90vw;color:rgb(230,230,230);font-size:3vh;">
-				<p style="display:none;" id="green_trigger">Faites attention! Depuis l'imposition de la sobriété énergétique par le super-ministre Fitzgibbon, les bornes de recharge électrique sont très négligées.</p>
+				<p style="display:none;" id="green_trigger">Faites attention! Ne vous approchez pas trop des bornes de recharge. Le réseau électrique est instable. Vous devez réessayer.</p>
 				<p style="display:none;" id="success_trigger"></p>
 				<div id="next_level" onclick="next_level()" class="btn" style="position:fixed;top:160vw;left:5vw;font-size:3.5vh;background-color:yellow;color:black;padding-left:1vw;padding-right:1vw;display:none;"><b>ALLER À LA ZONE SUIVANTE</b></div>
 
@@ -800,7 +800,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 						else if((pos_x==finished[0]) && (pos_y==finished[1]) && (car == -1)){
 							$(".arrow").hide();
 							$("#success_trigger").show();
-							if(params<4){
+							if(params<5){
 								$("#next_level").show();
 							}
 							$("#hero").fadeOut();
@@ -1048,7 +1048,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 	
 
 
-	var audio = new Audio('assets/sounds/explosion.wav');
+	var audio = new Audio('assets/sounds/a.wav');
 
 
 	</script>
