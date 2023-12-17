@@ -11,7 +11,7 @@ sprites_l = [ [8,2,"benoit.png",[ ["VOUS","Salut Benoît! Que fais-tu dans ce bo
 
 			];
 
-succes_sentence = "Féliciations! Grâce à vous, les chars circuleront plus vite dans les rues de Québec.";
+succes_sentence = "Félicitations! Grâce à vous, les chars circuleront plus vite dans les rues de Québec.";
 ot_cars = [
 
 
