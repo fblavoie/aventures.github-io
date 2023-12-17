@@ -1,7 +1,7 @@
 sprites_l = [ [1,7,"michael.png",[ ["VOUS","Bonjour Monsieur Sabia. Que se passe-t-il?"],
 									 ["MICHAEL SABIA","Hi France-Élaine. Please, do not disturb me. Nous sommes en panne majeure."],
 									 ["VOUS","Mais il n'est tombé que 2 cm de neige..."],
-									 ["VOUS","Et pourquoi rebrancher ce secteur? C'est un quartier de locateurs."],
+									 ["VOUS","Et pourquoi rebrancher ce secteur? C'est un quartier de locataires."],
 									 ["MICHAEL SABIA","Yes, but une usine est aussi à proximité. C'est la priorité de my friend Fitzgibbon."],
 									 ["VOUS","Ah oui! Que suis-je bête..."],
 									["MICHAEL SABIA","Be aware. The network is unstable. Je ne passerais pas trop proche des bornes de recharge si j'étais toi."],
