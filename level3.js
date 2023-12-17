@@ -13,7 +13,7 @@ sprites_l = [ [1,2,"christian.png",[ ["VOUS","Salut Christian! Comment va ta ré
 			
 			];
 
-succes_sentence = "Heureusement, vous réussissez de franchir tout ce chaos sans être infectée.";
+succes_sentence = "Heureusement, vous réussissez à franchir tout ce chaos sans être infectée.";
 ot_cars = [
 				[3,1,"up","blue",true],
 				[6,0,"left","blue",true],
