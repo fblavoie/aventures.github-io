@@ -544,6 +544,10 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 	var hero_y = null;
 	var trees = [];
 	var nb_fire = 0;
+	var nb_essais = 0;
+	var limited_trials = false;
+	var victory_message = "";
+	var in_victory = false;
 
 	var sprites = [];
 	
@@ -800,9 +804,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 						else if((pos_x==finished[0]) && (pos_y==finished[1]) && (car == -1)){
 							$(".arrow").hide();
 							$("#success_trigger").show();
-							if(params<5){
-								$("#next_level").show();
-							}
+							show_next_level();
 							$("#hero").fadeOut();
 						}
 						// Nothing special
@@ -850,26 +852,53 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 	var current_dialog = [];
 	var dialog_pos = -1;
 	
+	function show_next_level(){
+		if(params<6){
+			$("#next_level").show();
+		}
+	}
+	
 	function next_dialog(){
 		dialog_pos++;
 		if( dialog_pos < current_dialog.length  ){
 			$("#dialog_name").html(current_dialog[dialog_pos][0])
 			$("#dialog_text").html(current_dialog[dialog_pos][1])
+			if( limited_trials ){
+				if( current_dialog[dialog_pos][1].localeCompare(victory_message) == 0 ){
+					in_victory = true;
+				}
+			}
 		}
 		else{
 			dialog_pos = -1;
-			in_dialog = false;
-			can_move = true;
-			can_talk = true;
-
-			$("#arrow_menu").show()
-			$("#dialogs").hide();
+			
+			if(limited_trials && in_victory){ // Victory
+				$("#dialogs").hide();
+				$(".arrow").hide();
+				$("#success_trigger").show();
+				show_next_level();
+				$("#hero").fadeOut();
+			}
+			else if(limited_trials && (nb_essais == 0)){ // Failure
+				$("#dialogs").hide();
+				$(".arrow").hide();
+				$("#success_trigger").html("Vous échouez lamentablement. Vous devez recommencer.")
+				$("#success_trigger").show();
+			}
+			else{
+				in_dialog = false;
+				can_move = true;
+				can_talk = true;
+				$("#arrow_menu").show()
+				$("#dialogs").hide();
+			}
 		}
 	}
 	
 	
 	
 	setInterval(function () {
+		
 		
 		rotate = rotate + 5;
 		if(rotate>360){
@@ -887,12 +916,16 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 			}
 		}
 
+		if(nb_essais>0){
+			$("#nb_bruleurs").html("ESSAIS X "+nb_essais)
+			$("#nb_bruleurs").show();
+		}
 
 		if(nb_fire>0){
 			$("#nb_bruleurs").html("BRÛLEURS X "+nb_fire)
 			$("#nb_bruleurs").show();
 		}
-		else{
+		else if(nb_essais==0){
 			$("#nb_bruleurs").hide();
 		}
 
@@ -952,9 +985,15 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 				for (i=0;i<sprites.length;i++){
 					if( ((hero_x+diff_x) == sprites[i][0]) && ((hero_y+diff_y) == sprites[i][1]) ){
 						current_dialog = sprites[i][3];
+						current_image = sprites[i][2];
 					}
 				}
 				
+				if(limited_trials){
+					if(current_image.substring(0, 8).localeCompare("caquiste") == 0){
+						nb_essais = nb_essais - 1
+					}
+				}
 				
 				next_dialog();
 				$("#arrow_menu").hide()

@@ -13,7 +13,7 @@ sprites_l = [ [1,7,"michael.png",[ ["VOUS","Bonjour Monsieur Sabia. Que se passe
 
 			];
 
-succes_sentence = "La cavale de votre ministre préférée ne s'arrête pas là. Revenez-nous plus tard pour la suite des aventures.";
+succes_sentence = "Bravo! Grâce à vous, les amis de Pierre Fitzgibbon ne manqueront pas d'électricité.";
 ot_cars = [
 
 ];
