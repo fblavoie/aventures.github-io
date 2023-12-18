@@ -6,7 +6,7 @@ sprites_l = [ [9,3,"eric.png",[ ["VOUS","Salut Éric! Que fais-tu avec tous ces 
 									 ["ÉRIC GIRARD","... avec la carte de crédit du Gouvernement du Québec."],
 									["ÉRIC GIRARD","Tu pourrais m'aider à trouver la rondelle? Mais STP, ne réveille pas trop de gens pour ne pas soulever trop de soupçons par rapport à l'utilisation de la carte de crédit."],
 									["VOUS","Ouais, j'avoue que c'est gênant..."],
-									 ["ÉRIC GIRARD","Tu pourrais trouver le bon électeur en ne réveillant pas plus que cinq personnes?"],
+									 ["ÉRIC GIRARD","Tu pourrais trouver le bon électeur qui a la rondelle en ne réveillant pas plus que cinq personnes?"],
 
 			]],
 
