@@ -37,6 +37,8 @@ tiles = [
             ]
 			
 change_tile = [ 
+				[5,2,"tree.png"],
+				[6,2,"tree.png"],
 
 				];
 
