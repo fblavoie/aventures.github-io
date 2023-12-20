@@ -1,4 +1,4 @@
-sprites_l = [ [5,9,"sonia.png",[   ["VOUS","Salut Sonia! Peux-tu bien me dire c'est quoi toutes ces poubelles-là?"],
+sprites_l = [ [5,9,"sonia.png",[   ["VOUS","Salut Sonia! Peux-tu bien me dire c'est quoi toutes ces poubelles là?"],
 									 ["SONIA LEBEL","Ça, c'est tout ce que ma secrétaire a rempli..."],
 									 ["SONIA LEBEL","Dès qu'une contre-offre des syndicats arrivait à mon bureau, j'ai donné ordre à ma secrétaire de mettre ça directement aux vidanges."],
 									 ["VOUS","J'aimerais bien rentrer chez moi. Peux-tu demander à ta secrétaire de dégager tout ça?"],
