@@ -1045,7 +1045,11 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 	
 	function show_next_level(){
 		if(params<8){
-			$("#next_level").show();
+			setTimeout(function() {
+
+				$("#next_level").show();
+				
+			},1500);
 		}
 	}
 	
