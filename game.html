@@ -34,6 +34,12 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 			body{
 				background-color:black;
 				font-family: 'Arial';
+				-webkit-touch-callout: none;
+				-webkit-user-select: none;
+				-khtml-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
 
 			}
 
@@ -693,10 +699,12 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 
 			</div>
 		
-			<div id="dialogs" style="position:fixed;top:110vw;left:5vw;width:90vw;color:rgb(230,230,230);font-size:2.3vh;display:none;">
-				<p id="dialog_name">:</p>
-				<p id="dialog_text"></p>
-				<div style="position:fixed;top:148vw;left:68vw;width:25vw;height:25vw;" class="arrow suite" onmousedown="pressbutton('talk')" ontouchstart="pressbutton('talk')"  onmouseup="direction='no';" ontouchend="direction='no';"  ></div>
+			<div id="dialogs_wrapper">
+				<div id="dialogs" style="position:fixed;top:110vw;left:5vw;width:90vw;color:rgb(230,230,230);font-size:2.3vh;display:none;">
+					<p id="dialog_name">:</p>
+					<p id="dialog_text"></p>
+					<div style="position:fixed;top:148vw;left:68vw;width:25vw;height:25vw;" class="arrow suite" onmousedown="pressbutton('talk')" ontouchstart="pressbutton('talk')"  onmouseup="direction='no';" ontouchend="direction='no';"  ></div>
+				</div>
 			</div>
 		
 		</div>
@@ -1078,6 +1086,9 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 			dialog_pos = -1;
 			
 			if(limited_trials && in_victory){ // Victory
+				can_talk = false;
+				can_move = false;
+				$("#dialogs_wrapper").hide();
 				$("#dialogs").hide();
 				$(".arrow").hide();
 				$("#success_trigger").show();
@@ -1085,6 +1096,9 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 				$("#hero").fadeOut();
 			}
 			else if(limited_trials && (nb_essais == 0)){ // Failure
+				can_talk = false;
+				can_move = false;
+				$("#dialogs_wrapper").hide();
 				$("#dialogs").hide();
 				$(".arrow").hide();
 				$("#success_trigger").html("Vous échouez lamentablement. Vous devez recommencer.")
