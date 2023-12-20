@@ -13,7 +13,7 @@ sprites_l = [ [9,3,"eric.png",[ ["VOUS","Salut Éric! Que fais-tu avec tous ces 
 
 			];
 
-succes_sentence = "Bravo! Vous avez réussi! La cavale de votre ministre préférée ne s'arrête pas là. Revenez-nous plus tard pour la suite des aventures.";
+succes_sentence = "Bravo! Vous avez réussi! Éric Girard pourra faire une conférence de presse pour présenter sa rondelle.";
 ot_cars = [
 
 ];
