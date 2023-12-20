@@ -14,7 +14,7 @@ sprites_l = [ [9,5,"eric2.png",[   ["ÉRIC CAIRE","Rebonjour France-Élaine. Reg
 
 			];
 
-succes_sentence = "Bravo! Grâce à vous, Éric Caire ne mourra pas de faim. Revenez-nous bientôt pour la suite de la cavale de votre ministre préférée.";
+succes_sentence = "Bravo! Grâce à vous, Éric Caire ne mourra pas de faim.";
 ot_cars = [
             [5,3,"alld","moveblock",true,"dup","dright"],
 			[5,7,"alld","moveblock",true,"dup","dleft"],
