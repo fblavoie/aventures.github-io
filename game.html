@@ -850,6 +850,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 			if(($('#tile_'+new_x+'_'+new_y).hasClass("block")==false)&&($('#tile_'+new_x+'_'+new_y).hasClass("block1")==false)){
 		
 				no_car = true;
+				hit_car_type = ""
 				hit_car = -1;
 				
 				for (i=0;i<ot_cars.length;i++){
@@ -857,6 +858,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 						if( (new_x == ot_cars[i][0]) && (new_y == ot_cars[i][1]) ){
 							no_car = false;
 							hit_car = i
+							hit_car_type = ot_cars[i][3]
 						}
 					}
 				}
@@ -995,7 +997,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 					}, 300);
 				
 				}
-				else{ // Crash
+				else if( ((hit_car_type.localeCompare("moveblock") == 0)&&(car>=0)) == false ){ // Crash
 					// Check if car moves
 					if(ot_cars[hit_car][3] == "cone"){
 						change_direction(delta_x,delta_y,hit_car);
@@ -1009,6 +1011,9 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 					else{
 						can_move = true;
 					}
+				}
+				else{
+					can_move = true;
 				}
 				
 			}
