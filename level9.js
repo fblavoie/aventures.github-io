@@ -1,19 +1,25 @@
-sprites_l = [ [9,6,"francois.png",[ ["VOUS","François... qu'est-ce que tu fais planté devant chez moi?"],
-									["FRANÇOIS BONNARDEL","Élaine! Mes agents de la SQ sont de nouveau en grève."],
+sprites_l = [ [9,6,"francois.png",[ ["VOUS","François... qu'est-ce que tu fais planté devant chez moi? Coudonc, aurais-tu un petit kick sur moi?"],
+									["FRANÇOIS BONNARDEL","Élaine! L'heure est grave! Mes agents de la SQ sont de nouveau en grève."],
 									["VOUS","Donc, aucun agent pour débarrer mon domaine?"],
 									["FRANÇOIS BONNARDEL","Non, ce n'est pas un service essentiel."],
-									["VOUS", "C'est parce que j'ai pas mes clés..."],
-									["VOUS","Bon, va falloir que j'utilise mon alternative pour débarrer mon domaine."],
+									["VOUS", "C'est parce que je ne me rappelle plus comment ça marche des serrures à clé."],
+									["VOUS","Bon, va falloir que j'utilise une alternative pour accéder à mon domaine."],
 									["VOUS","C'est très simple... je dois marcher sur toutes les tuiles en or."],
 									["VOUS", "Cependant, si je marche une seconde fois sur une même tuile... je serai électrocutée... c'est un piège pour éloigner les locatoires qui veulent venir m'écoeurer."],
 
-									]
-			],
+									]],
+			   [0,7,"jesus.png",[ ["VOUS","Ceci est une statue de Jésus."],
+									["VOUS","Ce grand homme a fait le miracle de marcher sur l'eau."],
+									]],
+				[0,5,"francois1er.png",[ ["VOUS","Ceci est une statue de notre grand chef François 1er."],
+									["VOUS","Ce grand homme aura fait le miracle de faire rouler les voitures sur l'eau."],
+									]],
+			
 
 			
 			];
 
-succes_sentence = "La cavale de votre ministre préférée s'arrête ici. Merci d'avoir joué.";
+succes_sentence = "La cavale de votre ministre préférée s'arrête ici. Merci d'avoir joué. Revenez-nous bientôt pour un nouveau jeu. Visitez le 3elien.com.";
 ot_cars = [
 			
 
@@ -63,8 +69,6 @@ change_tile = [
 						[2,8,"tree.png"],
 						[2,9,"tree.png"],
 						[0,3,"tree.png"],
-						[0,5,"tree.png"],
-						[0,7,"tree.png"],
 						[0,9,"tree.png"],
 
 				];
