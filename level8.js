@@ -9,7 +9,7 @@ sprites_l = [ [5,9,"sonia.png",[   ["VOUS","Salut Sonia! Peux-tu bien me dire c'
 
 			];
 
-succes_sentence = "Revenez-nous bientôt pour la suite de la cavale de votre ministre préférée.";
+succes_sentence = "Félicitations!";
 ot_cars = [
             [5,3,"alld","moveblock",true,"trash","trash"],
 			[5,7,"alld","moveblock",true,"trash","trash"],
