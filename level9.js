@@ -11,7 +11,7 @@ sprites_l = [ [9,6,"francois.png",[ ["VOUS","François... qu'est-ce que tu fais 
 			   [0,7,"jesus.png",[ ["VOUS","Ceci est une statue de Jésus."],
 									["VOUS","Ce grand homme a fait le miracle de marcher sur l'eau."],
 									]],
-				[0,5,"francois1er.png",[ ["VOUS","Ceci est une statue de notre grand chef François 1er."],
+				[0,5,"francois1er.png",[ ["VOUS","Ceci est une statue de notre grand roi François 1er."],
 									["VOUS","Ce grand homme aura fait le miracle de faire rouler les voitures sur l'eau."],
 									]],
 			
