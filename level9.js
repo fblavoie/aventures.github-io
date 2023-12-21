@@ -5,7 +5,7 @@ sprites_l = [ [9,6,"francois.png",[ ["VOUS","François... qu'est-ce que tu fais 
 									["VOUS", "C'est parce que j'ai pas mes clés..."],
 									["VOUS","Bon, va falloir que j'utilise mon alternative pour débarrer mon domaine."],
 									["VOUS","C'est très simple... je dois marcher sur toutes les tuiles en or."],
-									["VOUS", "Cependant, si je marche une seconde fois sur une même tuile... je serai électrocutée... c'est un pièce pour éloigner les locatoires qui veulent venir m'écoeurer."],
+									["VOUS", "Cependant, si je marche une seconde fois sur une même tuile... je serai électrocutée... c'est un piège pour éloigner les locatoires qui veulent venir m'écoeurer."],
 
 									]
 			],
