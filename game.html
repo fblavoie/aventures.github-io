@@ -1382,11 +1382,15 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 	}, 20);
 	
 	
-	
-	document.addEventListener('contextmenu', event => {
-		event.preventDefault();
-		//event.stopPropagation();
-	});
+	if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+		console.log("MOBILE")
+	}else{
+		console.log("DESKTOP")
+		document.addEventListener('contextmenu', event => {
+			event.preventDefault();
+			//event.stopPropagation();
+		});
+	}
 	
 	//document.querySelector(".arrow").addEventListener("touchstart", (e) =>
 	//{
