@@ -734,7 +734,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 				<div id="dialogs" style="position:fixed;top:110vw;left:5vw;width:90vw;color:rgb(230,230,230);font-size:2.3vh;display:none;">
 					<p id="dialog_name">:</p>
 					<p id="dialog_text"></p>
-					<div style="position:fixed;top:148vw;left:68vw;width:25vw;height:25vw;" class="arrow suite" disabled="disabled"  onmousedown="pressbutton('talk')" ontouchstart="pressbutton('talk')"  onmouseup="direction='no';" ontouchend="direction='no';"  ></div>
+					<div id="suite_d"><div style="position:fixed;top:148vw;left:68vw;width:25vw;height:25vw;" class="arrow suite" disabled="disabled"  onmousedown="pressbutton('talk')" ontouchstart="pressbutton('talk')"  onmouseup="direction='no';" ontouchend="direction='no';"  ></div></div>
 				</div>
 			</div>
 		
@@ -1153,6 +1153,9 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 		dialog_pos++;
 		in_dialog = true;
 		$("#dialogs").show();
+		rnd = getRandomInt(9999999999);
+		$("#suite_d").html(`<div style="position:fixed;top:148vw;left:68vw;width:25vw;height:25vw;" class="arrow suite r_`+rnd+`" disabled="disabled"  onmousedown="pressbutton('talk')" ontouchstart="pressbutton('talk')"  onmouseup="direction='no';" ontouchend="direction='no';"  ></div>`)
+		
 		if( dialog_pos < current_dialog.length  ){
 			// Check if pizza
 			if(current_dialog[dialog_pos][0].localeCompare("PIZZA") == 0){
