@@ -868,9 +868,10 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 		direction="no"
 	});
 	
-	
+	var reserve = "no";
 	function pressbutton(pb){
 		if(direction.localeCompare("no") == 0){
+			reserve = pb
 			direction = pb;
 		}
 	}
@@ -1175,7 +1176,11 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 	
 	
 	setInterval(function () {
-		
+
+		if (reserve.localeCompare("no")!=0 ){
+			direction_ori = direction;
+			direction = reserve;
+		}
 		
 		rotate = rotate + 5;
 		if(rotate>360){
@@ -1355,9 +1360,15 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 					can_fire = false;
 					
 			}
-			
+		
 
 		}
+
+		if (reserve.localeCompare("no")!=0 ){
+			direction = direction_ori;
+			reserve = "no";
+		}
+		
 		
 	}, 20);
 	
