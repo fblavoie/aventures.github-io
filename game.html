@@ -1392,7 +1392,12 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 	{
 		e.preventDefault();
 		e.stopPropagation();
-		this.style.userSelect = "none";
+	});
+	
+	document.querySelector(".arrow").addEventListener("touchend", (e) =>
+	{
+		e.preventDefault();
+		e.stopPropagation();
 	});
 	
 	var audio = new Audio('assets/sounds/a.wav');
