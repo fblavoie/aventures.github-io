@@ -871,7 +871,12 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 	var reserve = "no";
 	function pressbutton(pb){
 		if(direction.localeCompare("no") == 0){
-			reserve = pb
+			if(direction.localeCompare("talk") != 0){
+				reserve = pb
+			}
+			else{
+				reserve = "no";
+			}
 			direction = pb;
 		}
 	}
