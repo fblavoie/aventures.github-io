@@ -1383,7 +1383,9 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 	
 	
 
-
+	document.addEventListener('contextmenu', event => {
+		event.preventDefault();
+	});
 	var audio = new Audio('assets/sounds/a.wav');
 
 	</script>
