@@ -563,6 +563,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 						$("#pizza").fadeOut(500);
 						$(".arrow").hide();
 						$("#success_trigger").show();
+						$("#arrow_menu").hide()
 						show_next_level();
 						$("#hero").fadeOut();
 					}
@@ -1088,6 +1089,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 						else if((pos_x==finished[0]) && (pos_y==finished[1]) && (car == -1)){
 							$(".arrow").hide();
 							$("#success_trigger").show();
+							$("#arrow_menu").hide()
 							show_next_level();
 							$("#hero").fadeOut();
 						}
@@ -1194,6 +1196,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 				$(".arrow").hide();
 				$("#success_trigger").html("Vous échouez lamentablement. Vous devez recommencer.")
 				$("#success_trigger").show();
+				$("#arrow_menu").hide()
 			}
 			else{
 				in_dialog = false;
