@@ -717,8 +717,8 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 				<div id="down_div"><div style="position:fixed;top:148vw;left:37.5vw;width:25vw;height:25vw;"  class="arrow up" onmousedown="pressbutton('down')" ontouchstart="pressbutton('down')"  onmouseup="unpress('down');" ontouchend="unpress('down')"  ></div></div>
 				<div id="left_div"><div style="position:fixed;top:123vw;left:12.5vw;width:25vw;height:25vw;"  class="arrow right" onmousedown="pressbutton('left')" ontouchstart="pressbutton('left')"  onmouseup="unpress('left');" ontouchend="unpress('left')"  ></div></div>
 				<div id="right_div"><div style="position:fixed;top:123vw;left:62.5vw;width:25vw;height:25vw;"  class="arrow left" onmousedown="pressbutton('right')" ontouchstart="pressbutton('right')"  onmouseup="unpress('right')" ontouchend="unpress('right')"  ></div></div>
-				<div style="position:fixed;top:123vw;left:37.5vw;width:25vw;height:25vw;display:none;"  class="arrow talk" onmousedown="direction='talk'" ontouchstart="direction='talk'"  ontouchmove="direction='talk'"  ></div>
-				<div style="position:fixed;top:123vw;left:37.5vw;width:25vw;height:25vw;display:none;"  class="arrow fire" onmousedown="direction='talk'" ontouchstart="direction='talk'"  ontouchmove="direction='talk'"  ></div>
+				<div style="position:fixed;top:123vw;left:37.5vw;width:25vw;height:25vw;display:none;"  class="arrow talk" onclick="direction='talk'"  ></div>
+				<div style="position:fixed;top:123vw;left:37.5vw;width:25vw;height:25vw;display:none;"  class="arrow fire" onclick="direction='talk'"  ></div>
 
 			</div>
 
@@ -735,7 +735,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 				<div id="dialogs" style="position:fixed;top:110vw;left:5vw;width:90vw;color:rgb(230,230,230);font-size:2.3vh;display:none;">
 					<p id="dialog_name">:</p>
 					<p id="dialog_text"></p>
-					<div id="suite_d"><div style="position:fixed;top:148vw;left:68vw;width:25vw;height:25vw;" class="arrow suite" disabled="disabled"  onmousedown="pressbutton('talk')" ontouchstart="pressbutton('talk')"  onmouseup="direction='no';" ontouchend="direction='no';"  ></div></div>
+					<div id="suite_d"><div style="position:fixed;top:148vw;left:68vw;width:25vw;height:25vw;" class="arrow suite" disabled="disabled" onclick="direction='talk'"  ></div></div>
 				</div>
 			</div>
 		
@@ -896,12 +896,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 	var reserve = "no";
 	function pressbutton(pb){
 		if(direction.localeCompare("no") == 0){
-			if(pb.localeCompare("talk") != 0){
-				reserve = pb
-			}
-			else{
-				reserve = "no";
-			}
+			reserve = pb
 			direction = pb;
 		}
 	}
@@ -1152,11 +1147,12 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 	}
 	
 	function next_dialog(){
+		direction = "no";
 		dialog_pos++;
 		in_dialog = true;
 		$("#dialogs").show();
 		rnd = getRandomInt(9999999999);
-		$("#suite_d").html(`<div style="position:fixed;top:148vw;left:68vw;width:25vw;height:25vw;" class="arrow suite r_`+rnd+`" disabled="disabled"  onmousedown="pressbutton('talk')" ontouchstart="pressbutton('talk')"  onmouseup="direction='no';" ontouchend="direction='no';"  ></div>`)
+		$("#suite_d").html(`<div style="position:fixed;top:148vw;left:68vw;width:25vw;height:25vw;" class="arrow suite r_`+rnd+`" disabled="disabled"  onclick="direction='talk'"   ></div>`)
 		
 		if( dialog_pos < current_dialog.length  ){
 			// Check if pizza
@@ -1209,8 +1205,11 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 	}
 	
 	
+	var diff_x = -10;
+	var diff_y = -10;
 	
-	setInterval(function () {
+	function interdef() {
+
 
 		if (reserve.localeCompare("no")!=0 ){
 			direction_ori = direction;
@@ -1228,7 +1227,9 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 
 		if((can_move==false) && in_dialog){
 			if(direction.localeCompare("talk") == 0){
+				console.log("nd")
 				direction = "no";
+				direction_ori = "no"
 				next_dialog();
 			}
 		}
@@ -1409,7 +1410,13 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 		}
 		
 		
-	}, 20);
+		
+		setTimeout(function() {
+			interdef();
+		},20);
+		
+	}
+	interdef();
 	
 	
 	if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
