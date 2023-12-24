@@ -1048,6 +1048,7 @@ Copyrights : Francis B. Lavoie et Adam Renquinha. TOUS DROITS RÉSERVÉS
 						// Green parking
 						else if(($('#tile_'+new_x+'_'+new_y).hasClass("green") || $('#tile_'+new_x+'_'+new_y).hasClass("gold_des")) && (car == -1)){
 							$(".arrow").hide();
+							$("#arrow_menu").hide();
 							$("#green_trigger").show();
 							$("#explosion").show();
 							$("#hero").fadeOut();
